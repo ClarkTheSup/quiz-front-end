@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route, BrowserRouter, Switch} from 'react-router-dom';
-import Item from '../Item/Item';
 import './Order.css';
 
 
@@ -12,11 +11,6 @@ class Order extends React.Component {
 
     render() {
         return <div className="order">
-            <Item/>
-            <Item/>
-            <Item/>
-            <Item/>
-            <Item/>
         </div>
     }
 }
