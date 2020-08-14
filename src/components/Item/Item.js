@@ -15,7 +15,7 @@ class Item extends React.Component {
         return <div className="item">
             <img src={image} width="300px" height="350px"/><br/>
             <span>可乐</span><br/>
-            <span>单价:1元/瓶</span><br/>
+            <span>单价:1元/瓶</span>
             <a href="">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
