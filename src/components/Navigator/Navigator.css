@@ -1,0 +1,20 @@
+#navigator{
+    background-color: #001629;
+    height: 50px;
+}
+#navigator ul{
+    float: left;
+    margin-top: 10px;
+}
+
+#navigator ul li{
+    display: inline-block;
+    width: 100px;
+}
+
+#navigator ul li a{
+    color: white;
+}
+#navigator ul svg{
+    margin-right: 5px;
+}
