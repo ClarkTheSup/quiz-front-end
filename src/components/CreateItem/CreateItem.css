@@ -15,3 +15,7 @@ h1{
 button{
     margin-top: 20px;
 }
+
+.create-item{
+    height: 800px;
+}

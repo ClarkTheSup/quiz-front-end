@@ -7,7 +7,17 @@ import 'bootstrap/dist/css/bootstrap.css';
 class Order extends React.Component {
     constructor(props) {
         super(props);
-        this.super = {}
+        this.state = {
+            items:[]
+        }
+        fetch("http://localhost:8080/orders", {method: "GET"})
+            .then(res=>res.json())
+            .then(data => this.setState({items:data}))
+            .then(()=>console.log(this.state.items));
+    }
+
+    deleteOrderItem = (event) => {
+        fetch(`http://localhost:8080/orderDelete/${event.target.item_id}`, {method: "POST"});
     }
 
     render() {
@@ -23,34 +33,17 @@ class Order extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>可乐1</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>瓶</td>
-                        <td><button type="button" class="btn btn-secondary">删除</button></td>
-                    </tr>
-                    <tr>
-                        <td>可乐1</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>瓶</td>
-                        <td><button type="button" class="btn btn-secondary">删除</button></td>
-                    </tr>
-                    <tr>
-                        <td>可乐1</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>瓶</td>
-                        <td><button type="button" class="btn btn-secondary">删除</button></td>
-                    </tr>
-                    <tr>
-                        <td>可乐1</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>瓶</td>
-                        <td><button type="button" class="btn btn-secondary">删除</button></td>
-                    </tr>
+                    {
+                    this.state.items.map((item) =>
+                        <tr>
+                            <td>{item.name}</td>
+                            <td>{item.price}</td>
+                            <td>1</td>
+                            <td>{item.measurement}</td>
+                            <td><button type="button" class="btn btn-secondary" item_id={item.id} onClick={this.deleteOrderItem}>删除</button></td>
+                        </tr>
+                    )
+                    }
                 </tbody>
             </table>
         </div>
